@@ -20,10 +20,13 @@ public class ComponentVersionParser {
      *         otherwise an empty {@link Optional}.
      */
     public static Optional<ComponentVersion> parse(String componentString) {
+
+        // if componentString is null or empty, return empty Optional
         if (componentString == null || componentString.trim().isEmpty()) {
             return Optional.empty();
         }
 
+        // if componentString doesn't contain a hyphen, return empty Optional
         String[] parts = componentString.split("-");
         if (parts.length < 2) {
             return Optional.empty();
