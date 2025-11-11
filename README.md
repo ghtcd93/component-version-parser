@@ -1,6 +1,6 @@
 # Component Version Parser
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.ghtcd/component-version-parser.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:io.github.ghtcd%20AND%20a:component-version-parser)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.ghtcd93/component-version-parser.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:io.github.ghtcd93%20AND%20a:component-version-parser)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 A simple, zero-dependency Java library to parse a component string (e.g., "spring-boot-2.7.5") into its name ("spring-boot") and version ("2.7.5").
@@ -21,7 +21,7 @@ You can add the library to your project as a dependency from Maven Central.
 
 ```xml
 <dependency>
-    <groupId>io.github.ghtcd</groupId>
+    <groupId>io.github.ghtcd93</groupId>
     <artifactId>component-version-parser</artifactId>
     <version>LATEST_VERSION</version>
 </dependency>
