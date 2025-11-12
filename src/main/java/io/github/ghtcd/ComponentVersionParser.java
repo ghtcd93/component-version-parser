@@ -1,8 +1,7 @@
 package io.github.ghtcd;
 
 import java.util.regex.Pattern;
-import java.util.Optional;
-import java.util.StringJoiner;
+import java.util.Optional; 
 
 public class ComponentVersionParser {
 
@@ -21,27 +20,23 @@ public class ComponentVersionParser {
      */
     public static Optional<ComponentVersion> parse(String componentString) {
 
-        // if componentString is null or empty, return empty Optional
+        // if componentString is null or is Empty, return an empty
         if (componentString == null || componentString.trim().isEmpty()) {
             return Optional.empty();
         }
 
-        // if componentString doesn't contain a hyphen, return empty Optional
-        String[] parts = componentString.split("-");
-        if (parts.length < 2) {
-            return Optional.empty();
-        }
+        // Iterate backwards from the end of the string to find the last separator ('-' or '@')
+        for (int i = componentString.length() - 1; i > 0; i--) {
+            char c = componentString.charAt(i);
 
-        for (int i = parts.length - 1; i > 0; i--) {
-            String potentialVersion = parts[i];
-            if (VERSION_LIKE_PATTERN.matcher(potentialVersion).matches()) {
-                StringJoiner nameJoiner = new StringJoiner("-");
-                for (int j = 0; j < i; j++) {
-                    nameJoiner.add(parts[j]);
+            if (c == '-' || c == '@') {
+                if (i > 0) {
+                    String potentialVersion = componentString.substring(i + 1);
+                    if (VERSION_LIKE_PATTERN.matcher(potentialVersion).matches()) {
+                        String name = componentString.substring(0, i);
+                        return Optional.of(new ComponentVersion(name, potentialVersion));
+                    }
                 }
-                String name = nameJoiner.toString();
-                String version = componentString.substring(name.length() + 1);
-                return Optional.of(new ComponentVersion(name, version));
             }
         }
 

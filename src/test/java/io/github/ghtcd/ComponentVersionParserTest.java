@@ -30,9 +30,12 @@ class ComponentVersionParserTest {
             // Date-based version
             "another-lib-20220101,                      another-lib,                  20220101",
             // Complex SemVer with build metadata
-            "complex-parser-1.0.0-alpha.1+build.123,    complex-parser,               1.0.0-alpha.1+build.123",
-            // Name with numbers
-            "log4j-api-2.17.1,                          log4j-api,                    2.17.1"
+            "complex-parser-1.0.0-alpha.1+build.123,    complex-parser,               1.0.0-alpha.1+build.123", // Name with numbers
+            "log4j-api-2.17.1,                          log4j-api,                    2.17.1",
+            // With '@' separator
+            "ST4@4.0.7,                                 ST4,                          4.0.7",
+            // With '@' separator and 'v' prefix
+            "my-lib@v2.1,                               my-lib,                       v2.1"
     })
     @DisplayName("Should parse various component strings into name and version")
     void shouldParseVariousComponentVersions(String input, String expectedName, String expectedVersion) {

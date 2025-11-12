@@ -23,7 +23,7 @@ You can add the library to your project as a dependency from Maven Central.
 <dependency>
     <groupId>io.github.ghtcd93</groupId>
     <artifactId>component-version-parser</artifactId>
-    <version>LATEST_VERSION</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
