@@ -30,7 +30,7 @@ You can add the library to your project as a dependency from Maven Central.
 ### Gradle
 
 ```groovy
-implementation 'io.github.ghtcd:component-version-parser:LATEST_VERSION'
+implementation 'io.github.ghtcd93:component-version-parser:1.0.1'
 ```
 
 > **Note**: Please replace `LATEST_VERSION` with the latest version number found on Maven Central.
