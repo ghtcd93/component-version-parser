@@ -30,12 +30,10 @@ public class ComponentVersionParser {
             char c = componentString.charAt(i);
 
             if (c == '-' || c == '@') {
-                if (i > 0) {
-                    String potentialVersion = componentString.substring(i + 1);
-                    if (VERSION_LIKE_PATTERN.matcher(potentialVersion).matches()) {
-                        String name = componentString.substring(0, i);
-                        return Optional.of(new ComponentVersion(name, potentialVersion));
-                    }
+                String potentialVersion = componentString.substring(i + 1);
+                if (VERSION_LIKE_PATTERN.matcher(potentialVersion).matches()) {
+                    String name = componentString.substring(0, i);
+                    return Optional.of(new ComponentVersion(name, potentialVersion));
                 }
             }
         }
