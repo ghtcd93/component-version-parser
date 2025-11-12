@@ -1,7 +1,9 @@
-package io.github.ghtcd;
+package io.github.ghtcd.internal;
 
+import io.github.ghtcd.ComponentVersion;
+
+import java.util.Optional;
 import java.util.regex.Pattern;
-import java.util.Optional; 
 
 public class ComponentVersionParser {
 

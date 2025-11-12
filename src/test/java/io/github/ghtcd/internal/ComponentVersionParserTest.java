@@ -1,5 +1,6 @@
-package io.github.ghtcd;
+package io.github.ghtcd.internal;
 
+import io.github.ghtcd.ComponentVersion;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -11,7 +12,7 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * Unit test for {@link ComponentVersionParser}.
+ * Unit test for {@link io.github.ghtcd.internal.ComponentVersionParser}.
  */
 class ComponentVersionParserTest {
 
